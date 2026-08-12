@@ -16,6 +16,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px; /* keeps iOS Safari from auto-zooming when an input is focused */
   background: var(--bg-subtle);
   color: var(--text);
   line-height: 1.5;
@@ -86,20 +87,22 @@ header.site-header .club-name {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   margin-bottom: 8px;
   cursor: pointer;
 }
 
-.option input[type="radio"] { width: 18px; height: 18px; }
+.option input[type="radio"] { width: 20px; height: 20px; flex-shrink: 0; }
 
 button, input[type="text"], input[type="date"], input[type="password"], select, textarea {
   font: inherit;
   border-radius: 8px;
   border: 1px solid var(--border);
   padding: 10px 12px;
+  min-height: 44px; /* comfortable tap target on phones */
 }
 
 input[type="text"], input[type="date"], input[type="password"], select, textarea {
@@ -108,7 +111,7 @@ input[type="text"], input[type="date"], input[type="password"], select, textarea
   color: var(--text);
 }
 
-textarea { resize: vertical; min-height: 72px; }
+textarea { resize: vertical; min-height: 96px; }
 
 button.primary {
   width: 100%;
@@ -134,7 +137,9 @@ button.secondary {
 button.icon-btn {
   background: var(--bg);
   cursor: pointer;
-  padding: 6px 10px;
+  min-width: 44px;
+  padding: 10px;
+  font-size: 1.05rem;
 }
 
 .status-line {
@@ -157,7 +162,7 @@ button.icon-btn {
 
 .editor-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 8px;
   padding: 12px 0;
   border-bottom: 1px solid var(--border);
@@ -171,8 +176,8 @@ button.icon-btn {
 }
 
 .editor-row .full { grid-column: 1 / -1; }
-.editor-row .checkbox-field { display: flex; align-items: center; gap: 8px; }
-.editor-row .checkbox-field input { width: auto; }
+.editor-row .checkbox-field { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+.editor-row .checkbox-field input { width: 20px; height: 20px; flex-shrink: 0; }
 
 .row-actions {
   grid-column: 1 / -1;
@@ -197,6 +202,6 @@ button.icon-btn {
 
 .pin-gate input { margin-bottom: 12px; }
 
-@media (max-width: 420px) {
-  .editor-row { grid-template-columns: 1fr; }
+@media (min-width: 600px) {
+  .editor-row { grid-template-columns: repeat(2, 1fr); }
 }
