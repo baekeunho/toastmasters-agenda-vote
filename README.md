@@ -29,6 +29,16 @@ tradeoff for a club meeting, not a bug.
 
 ## Set up your own club's copy
 
+Nothing here needs to be "downloaded" or installed — it's all done through
+web pages (github.com and Google Sheets/Apps Script). You *can* do the
+whole thing from a phone browser, but step 3 below (pasting code into the
+Apps Script editor and using its Deploy dialog) is fiddly on a small
+screen, and the Google Sheets mobile app doesn't expose Extensions → Apps
+Script at all — you'd need to force "desktop site" in your phone's browser
+to reach it. A laptop makes that one step easier; everything else,
+including running the site week to week once it's set up, works fine on
+mobile.
+
 1. **Fork this repository** (or use it as a template) on GitHub.
 2. **Create a new Google Sheet** — a blank one is fine.
 3. In the Sheet, go to **Extensions → Apps Script**, delete the default
