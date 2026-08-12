@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edit Agenda</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="club-name" id="club-name">Toastmasters Club</div>
+      <h1>Edit Meeting Agenda</h1>
+    </header>
+
+    <div id="pin-gate" class="pin-gate" hidden>
+      <p>Enter the editor PIN to continue.</p>
+      <input type="password" id="pin-input" placeholder="PIN">
+      <button class="primary" id="pin-submit" type="button">Continue</button>
+      <p class="status-line error" id="pin-error"></p>
+    </div>
+
+    <div id="editor" hidden>
+      <div class="card">
+        <h2>Meeting details</h2>
+        <label for="meeting-title-input">Meeting title</label>
+        <input type="text" id="meeting-title-input" placeholder="Weekly Meeting #15">
+        <br><br>
+        <label for="meeting-date-input">Meeting date</label>
+        <input type="date" id="meeting-date-input">
+      </div>
+
+      <div class="card">
+        <h2>Agenda rows</h2>
+        <div id="rows"></div>
+        <div class="top-actions" style="margin-top:12px">
+          <button class="secondary" id="add-row-btn" type="button">+ Add row</button>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="primary" id="publish-btn" type="button">Publish agenda</button>
+      </div>
+      <p class="status-line" id="publish-status"></p>
+      <p class="muted">Publishing replaces the live agenda for everyone and resets voting for this meeting. It does not clear past votes/feedback in the Sheet.</p>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>
